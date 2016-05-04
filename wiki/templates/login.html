@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Login:SnT Wiki</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static "assets1/css/main.css" %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		{% load staticfiles %}
+		<noscript><link rel="stylesheet" href="{% static "assets1/css/noscript.css" %}" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							{% load staticfiles %}
+							<span class="avatar"><img src="{% static "images1/avatar.jpg" %}" alt="" /></span>
+							<h1>Login</h1>
+							
+						</header>
+						
+						<hr />
+						<form method="post" action="/login/">
+							{% csrf_token %}
+							<div class="field">
+								<input type="text" name="username" id="username" placeholder="Username" autocapitalize="none" />
+							</div>
+							<div class="field">
+								<input type="password" name="password" id="email" placeholder="Password" />
+							</div>
+							
+							
+							<ul class="actions">
+								<li><input type="submit" class="button" />
+							</ul>
+						</form>
+						<hr />
+					
+						<footer>
+							<ul class="icons">
+								<li><a href="/" class="fa fa-home">Home</a></li>
+								<li><a href="/signup/" class="fa fa-user-plus">Signup</a></li>
+								
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; SnT Council,IIT Kanpur</li>
+							<li>Design: <a href="#">Web Team, SnT</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+</html>

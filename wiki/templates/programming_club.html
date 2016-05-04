@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>{{club_name}}:Teams</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static "assets3/css/main.css" %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="#">{{club_name}}</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/clubs/">Clubs</a></li>
+								<li><a href="/login/">Login</a></li>
+								<li><a href="/signup">Signup</a></li>
+								<li><a href="#">Adipiscing</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Dolor sit amet</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Feugiat veroeros</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Etiam sed consequat</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions vertical">
+									<li><a href="#" class="button big fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+						{% for teams in team %}
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="/{{teamname}}/details/">{{teams.team_name}}</a></h2>
+										
+									</div>
+									<div class="meta">
+										<p class="published">{{teams.team_about}}</p>
+										
+									</div>
+								</header>
+								
+								<p>{{teams.team_briefinfo}}</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="/{{teamname}}/details/" class="button big">Details</a></li>
+									</ul>
+									<ul class="stats">
+										
+										<li><a href="#" class="icon fa-heart">28</a></li>
+										<li><a href="#" class="icon fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+						{% endfor %}
+
+						
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								{% load staticfiles %}
+								<a href="#" class="logo"><img src="{% static "images3/logo.jpg" %}" alt="" /></a>
+								<header>
+									<h2>SnT Wiki</h2>
+									<p>Where Projects are Made</p>
+								</header>
+							</section>
+
+						<!-- Mini Posts -->
+							<section>
+								<div class="mini-posts">
+
+									<!-- Mini Post -->
+									{% for teams1 in team %}
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">{{teams1.team_name}}</a></h3>
+												<time class="published" datetime="2015-10-20">{{teams1.team_update}}</time>
+												{% load staticfiles %}
+												<a href="#" class="author"><img src="{% static "images3/avatar.jpg" %}" alt="" /></a>
+											</header>
+											
+										</article>
+										{% endfor %}
+
+									
+
+								</div>
+							</section>
+
+						<!-- Posts List -->
+							
+						<!-- About -->
+						
+
+						<!-- Footer -->
+							<section id="footer">
+								<ul class="icons">
+									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+								<p class="copyright">&copy; SnT Council,IIT Kanpur <a href="http://html5up.net">Web Team,SnT</a></p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+		{% load staticfiles %}
+			<script src="{% static "assets3/js/jquery.min.js" %}"></script>
+			{% load staticfiles %}
+			<script src="{% static "assets3/js/skel.min.js" %}"></script>
+			{% load staticfiles %}
+			<script src="{% static "assets3/js/util.js" %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			{% load staticfiles %}
+			<script src="{% static "assets3/js/main.js" %}"></script>
+
+	</body>
+</html>

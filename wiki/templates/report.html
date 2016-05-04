@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Report Upload</title>
+</head>
+<body>
+
+<form action="/{{teamname}}/report/" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>filename</p>
+	<br>
+	<input type="text" name="filename">
+	
+	<input type="file" name="file" id="file"> 
+	<input type="submit">
+	</form>
+</body>
+</html>
