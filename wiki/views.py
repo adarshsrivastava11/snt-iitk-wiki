@@ -199,10 +199,3 @@ def programming_club(request):
 		})
 	output = template.render(variables)
 	return HttpResponse(output)
-
-
-
-
-
-
-
