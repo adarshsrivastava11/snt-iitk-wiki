@@ -75,7 +75,7 @@ def handle_upload(f,teamname,filename):
 
 @login_required
 def dashboard(request,team_name):
-	template = get_template('dashboard 2.html')
+	template = get_template('dashboard.html')
 	filename=request.POST.get('filename',False)
 		
 	current_user = request.user.username
